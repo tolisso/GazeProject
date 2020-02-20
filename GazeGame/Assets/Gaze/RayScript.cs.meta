@@ -1,0 +1,13 @@
+fileFormatVersion: 2
+guid: 6dc12f87d938bbd4d86a44de55fb9b3a
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences:
+  - gazeCamera: {fileID: 2958430402652137982, guid: e08e0db4323426345a717f0484236749,
+      type: 3}
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
