@@ -1,0 +1,41 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 11.00
+# Visual Studio 2010
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Assembly-CSharp", "Assembly-CSharp.csproj", "{47337B8A-4EBC-6234-56F0-BD89A0627DCE}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NavMeshComponents", "NavMeshComponents.csproj", "{739520D3-0E61-2783-7938-3F4DE74B84AA}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NavMeshComponentsEditor", "NavMeshComponentsEditor.csproj", "{FE1E19DA-82FF-DF02-0A73-2630E8CE0E0A}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Assembly-CSharp-Editor", "Assembly-CSharp-Editor.csproj", "{04FFB794-8A4C-F7E0-AD72-EEBAE4FE2E98}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{47337B8A-4EBC-6234-56F0-BD89A0627DCE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{47337B8A-4EBC-6234-56F0-BD89A0627DCE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{47337B8A-4EBC-6234-56F0-BD89A0627DCE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{47337B8A-4EBC-6234-56F0-BD89A0627DCE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{739520D3-0E61-2783-7938-3F4DE74B84AA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{739520D3-0E61-2783-7938-3F4DE74B84AA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{739520D3-0E61-2783-7938-3F4DE74B84AA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{739520D3-0E61-2783-7938-3F4DE74B84AA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FE1E19DA-82FF-DF02-0A73-2630E8CE0E0A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FE1E19DA-82FF-DF02-0A73-2630E8CE0E0A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FE1E19DA-82FF-DF02-0A73-2630E8CE0E0A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FE1E19DA-82FF-DF02-0A73-2630E8CE0E0A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{04FFB794-8A4C-F7E0-AD72-EEBAE4FE2E98}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{04FFB794-8A4C-F7E0-AD72-EEBAE4FE2E98}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{04FFB794-8A4C-F7E0-AD72-EEBAE4FE2E98}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{04FFB794-8A4C-F7E0-AD72-EEBAE4FE2E98}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(MonoDevelopProperties) = preSolution
+		StartupItem = Assembly-CSharp.csproj
+	EndGlobalSection
+EndGlobal

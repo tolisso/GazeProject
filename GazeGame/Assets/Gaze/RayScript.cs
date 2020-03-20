@@ -18,9 +18,9 @@ public class RayScript : MonoBehaviour
     void Update()
     {
     	gazeRay = Camera.main.ScreenPointToRay(new Vector3(x, y, 0));
-    	
+    	Debug.DrawRay(gazeRay.origin, gazeRay.direction * 10, Color.yellow);		
  		Vector3 direction = gazeRay.direction;
     	gazeCamera.transform.position = Camera.main.transform.position;
-    	gazeCamera.transform.rotation = Quaternion.Euler(direction[0], direction[1], 0);
+    	gazeCamera.transform.rotation = Quaternion.LookRotation(direction);
     }
 }
