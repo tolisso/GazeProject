@@ -1,23 +1,112 @@
 <!DOCTYPE html>
 <!-- saved from url=(0029)https://api.gazerecorder.com/ -->
-<html class="gr__api_gazerecorder_com"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-
-<link rel="icon" href="https://api.gazerecorder.com/favicon.png">
-<title>GazeCloudAPI</title>
-
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"> <link rel="stylesheet" href="./GazeCloudAPI_files/GazeCloudAPI.css">
+      <title>GazeCloudAPI | WebCam Online Eye-Tracking</title>
 
 <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
 <meta http-equiv="Pragma" content="no-cache">
 <meta http-equiv="Expires" content="0">
 
- <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+
+	<meta name="author" content="GazeRecorder">
+
+    <meta name="description" content="Accurate &amp; Robust WebCam Online Eye-Tracking.">
+
+    <meta property="og:title" content="GazeCloudAPI | Cross-platform Real-Time Eye-Tracking">
+
+    <meta property="og:description" content="Accurate &amp; Robust WebCam Online Eye-Tracking.">
+
+   <meta property="og:image" content="https://api.gazerecorder.com/gazecloudapi.png">
+
+    <meta property="og:url" content="https://api.gazerecorder.com">
+
+<meta name="twitter:description" content="Accurate &amp; Robust WebCam Online Eye-Tracking.">
+<meta name="twitter:title" content="GazeCloudAPI | Cross-platform Real-Time Eye-Tracking">
 
 
 
+<style>
 
-<meta name="viewport" content="width=device-width, initial-scale=1">
+.buttonStartEyeTrack {
 
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+
+
+  	background-color: rgb(255, 102, 0);
+
+
+
+  border: none;
+
+
+
+  color: white;
+
+
+
+  padding: 15px 32px;
+
+
+
+  text-align: center;
+
+
+
+  text-decoration: none;
+
+
+
+  display: inline-block;
+
+
+
+  font-size: 16px;
+
+
+
+  margin: 4px 2px;
+
+
+
+  cursor: pointer;
+
+
+
+display: block; 
+
+
+
+margin:auto;
+
+
+
+font-size: 16px;
+
+
+
+border-radius: 8px;
+
+
+
+}
+</style>
+
+
+     
+
+ <script src="./GazeCloudAPI_files/GazeCloudAPI.js.Без названия"></script>
+
+ <script src="./GazeCloudAPI_files/heatmapLive.js.Без названия"></script>
+ 
+ <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+
+<!--
+Select UI Language
+<script src="https://api.gazerecorder.com/GazeCloudAPI.js?loc=de" ></script>
+<script src="https://api.gazerecorder.com/GazeCloudAPI.js?loc=fr" ></script>
+<script src="https://api.gazerecorder.com/GazeCloudAPI.js?loc=es" ></script>
+e.t.c
+-->
 
 <script>
     gaze_x = -1;
@@ -32,102 +121,160 @@
     }  
     $(document).ready(function() {  
         show();  
-        setInterval('show()',1000);  
+        setInterval('show()',1000); 
     });
-    (function(h,o,t,j,a,r){
-        h.hj=h.hj||function(){(h.hj.q=h.hj.q||[]).push(arguments)};
-        h._hjSettings={hjid:1585570,hjsv:6};
-        a=o.getElementsByTagName('head')[0];
-        r=o.createElement('script');r.async=1;
-        r.src=t+h._hjSettings.hjid+j+h._hjSettings.hjsv;
-        a.appendChild(r);
-    })(window,document,'https://static.hotjar.com/c/hotjar-','.js?sv=');
-</script><script async="" src="./WorkingGazeCloudAPI_files/hotjar-1585570.js.download"></script>
-
-
- <script src="./WorkingGazeCloudAPI_files/GazeCloudAPI.js.download"></script>
+</script>
 
 
 
+      <style type="text/css">
+         body {
+         overflow: hidden;
+         }
+      </style>
+      <script type="text/javascript">
 
-<link rel="stylesheet" href="./WorkingGazeCloudAPI_files/GazeFlowApp.css">
+            
+         function PlotGaze(GazeData) {
 
-<style type="text/css">
-    body {
-        overflow: hidden;
-    }
+/*
+	GazeData.state // 0: valid gaze data; -1 : face tracking lost, 1 : gaze uncalibrated
+	GazeData.docX // gaze x in document coordinates
+	GazeData.docY // gaze y in document cordinates
+	GazeData.time // timestamp
+*/
 
-
-</style>
-
-
-
-<script type="text/javascript">
-  
-
-//var Logg = false;
-
-
-
-function OnResult(GazeData) {
-
-    gaze_x = GazeData.GazeX;
-    gaze_y = GazeData.GazeY;
-    document.getElementById("GazeData").innerHTML = "GazeX: " + GazeData.GazeX + " GazeY: " + GazeData.GazeY;
-    document.getElementById("HeadPhoseData").innerHTML = " HeadX: " + GazeData.HeadX + " HeadY: " + GazeData.HeadY + " HeadZ: " + GazeData.HeadZ;
-    document.getElementById("HeadRotData").innerHTML = " Yaw: " + GazeData.HeadYaw + " Pitch: " + GazeData.HeadPitch + " Roll: " + GazeData.HeadRoll;
+             gaze_x = GazeData.GazeX;
+             gaze_y = GazeData.GazeY;
+             document.getElementById("GazeData").innerHTML = "GazeX: " + GazeData.GazeX + " GazeY: " + GazeData.GazeY;
+             document.getElementById("HeadPhoseData").innerHTML = " HeadX: " + GazeData.HeadX + " HeadY: " + GazeData.HeadY + " HeadZ: " + GazeData.HeadZ;
+             document.getElementById("HeadRotData").innerHTML = " Yaw: " + GazeData.HeadYaw + " Pitch: " + GazeData.HeadPitch + " Roll: " + GazeData.HeadRoll;
+         
 
 
-var x = GazeData.docX;
-var y = GazeData.docY;
+if( !document.getElementById("ShowHeatMapId").checked) // gaze plot
+{
+         var x = GazeData.docX;
+         var y = GazeData.docY;
+         
+         var gaze = document.getElementById("gaze");
+         x -= gaze .clientWidth/2;
+         y -= gaze .clientHeight/2;
+         
+         
 
-var _img = document.getElementById("gazeimg");
-x -= _img.width/2;
-y -= _img.height/2;
+	gaze.style.left = x + "px";
+	gaze.style.top = y + "px";
 
+         
+         if(GazeData.state != 0)
+         {
+         	if( gaze.style.display  == 'block')
+         	gaze  .style.display = 'none';
+         }
+         else
+         {
+         	if( gaze.style.display  == 'none')
+         	gaze  .style.display = 'block';
+         }
+         
+}
+         }
+         
+         //////set callbacks/////////
+   
+         GazeCloudAPI.OnCalibrationComplete =function(){ShowHeatMap(); console.log('gaze Calibration Complete')  }
+         GazeCloudAPI.OnCamDenied =  function(){ console.log('camera  access denied')  }
+         GazeCloudAPI.OnError =  function(msg){ console.log('err: ' + msg)  }
+         GazeCloudAPI.UseClickRecalibration = true;
+      	 GazeCloudAPI.OnResult = PlotGaze; 
+         
 
-_img .style.left = x + "px";
-_img .style.top = y + "px";
-
-
-if(GazeData.state != 0)
-_img .style.display = 'none';
-else
-_img .style.display = 'block';
+function handleClickHeatMap(cb) {
+ 
+if( cb.checked)
+{
+	ShowHeatMap();
+	 document.getElementById("gaze").style.display = 'none';
+;
 
 }
-</script>
-<script async="" src="./WorkingGazeCloudAPI_files/modules.1563bfc088652f728ad5.js.download" charset="utf-8"></script><style type="text/css">iframe#_hjRemoteVarsFrame {display: none !important; width: 1px !important; height: 1px !important; opacity: 0 !important; pointer-events: none !important;}</style></head>
+else
+	 RemoveHeatMap()
+
+}
+
+     
+
+function start()
+{
+
+document.getElementById("startid").style.display = 'none';
+document.getElementById("stopid").style.display = 'block';
+
+GazeCloudAPI.StartEyeTracking(); 
+GazeCloudAPI.SetFps(15);
+}
+
+function stop()
+{
+
+document.getElementById("startid").style.display = 'block';
+document.getElementById("stopid").style.display = 'none';
+GazeCloudAPI.StopEyeTracking();
+}
+
+      </script>
+   </head>
+   <body>
+
+<div style="text-align: center;display: block">
+
+
+      <h1>GazeCloud API </h1>
+ 	<h4>WebCam Online Eye-Tracking</h4>
+<br>
+
+      <button id="startid" class="buttonStartEyeTrack" type="button" onclick="start() ">Start eye tracking</button>
+      <button id="stopid" style="display:none" class="buttonStartEyeTrack" type="button" onclick="stop();">Stop</button>
+      <div style="background-color: lightblue;">
+         <p>  
+            Real-Time Data:
+         </p><p id="GazeData"> </p>
+         <p id="HeadPhoseData"> </p>
+         <p id="HeadRotData"> </p>
+         <p></p>
+      </div>
+
+      <div id="gaze" style="position: absolute;display:none;width: 100px;height: 100px;border-radius: 50%;border: solid 2px  rgba(255, 255,255, .2);	box-shadow: 0 0 100px 3px rgba(125, 125,125, .5);	pointer-events: none;	z-index: 999999"></div>
+
+<label for="ShowHeatMapId">
+Show heatmap
+  <input id="ShowHeatMapId" type="checkbox" checked="" onclick="handleClickHeatMap(this);">
+
+
+</label>
 
 
 
-<body data-gr-c-s-loaded="true">
+
+<br>
+<br>
+<br>
+
+<p>With just a few lines of code, you can install our API into your website or app to start tracking your users eyes via WebCam.</p>
+<a href="https://gazerecorder.com/gazecloudapi/">Read More </a>
+
+     
+<br>
+<br>
+<hr>
+<p>
+You can also try <a href="https://app.gazerecorder.com/">GazeRecorder  App</a> . HTML Session Recording on any website
+</p>
 
 
-<h1>GazeCloudAPI integration example</h1>
-
-
-<button type="button" onclick="StartGazeFlow();">Start</button>
-<button type="button" onclick="StopGazeFlow();">Stop</button>
-
-
-    <div>
-
-<p>  
-
-Real-Time Result:
-</p><p id="GazeData"> </p>   
-<p id="HeadPhoseData"> </p> 
-<p id="HeadRotData"> </p>
-
-<p></p>
-
-    </div>
-
-
-<img id="gazeimg" src="./WorkingGazeCloudAPI_files/icon.png" style="position:absolute; left:200px; top:400px;  width: 100px;  height: 100px; pointer-events: none;opacity: 0.2; display:none">
-
-
-
-    
- <iframe name="_hjRemoteVarsFrame" title="_hjRemoteVarsFrame" id="_hjRemoteVarsFrame" src="./WorkingGazeCloudAPI_files/box-b736908ce6b0e933fad3a2e45df61b38.html" style="display: none !important; width: 1px !important; height: 1px !important; opacity: 0 !important; pointer-events: none !important;"></iframe></body></html>
+  
+</div>
+   
+</body></html>
